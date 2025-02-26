@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnología e Informática - Grado 11</title>
+    <title>Tecnología e Informática</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #f4f4f4, #d1e8ff);
             color: #333;
             margin: 0;
             padding: 0;
@@ -17,17 +14,40 @@
             color: white;
             padding: 20px;
             text-align: center;
+            
         }
         h1 {
             margin: 0;
             font-size: 2.5em;
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+            padding: 10px;
+        }
+        nav button {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav button:hover {
+            background-color: #004494;
+        }
         .container {
+            background-image: url('ia.png'); 
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         .section {
             margin-bottom: 40px;
@@ -51,6 +71,10 @@
             border-radius: 8px;
             flex: 1 1 calc(33.333% - 40px);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
         }
         .resource-card h3 {
             margin-top: 0;
@@ -72,6 +96,39 @@
         .excel-section h2 {
             color: #2e7d32;
         }
+        .upload-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff3e0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .upload-section h2 {
+            color: #e65100;
+        }
+        .upload-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .upload-section input[type="file"] {
+            padding: 10px;
+            border: 2px solid #0078d7;
+            border-radius: 5px;
+        }
+        .upload-section input[type="submit"] {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .upload-section input[type="submit"]:hover {
+            background-color: #004494;
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -79,24 +136,31 @@
             color: white;
             margin-top: 40px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
     <header>
+        
         <h1>Tecnología e Informática</h1>
-        <p>Grado 11 - Explorando el mundo de la tecnología y la informática</p>
         <p>IE Panfilo Cantillo</p>
     </header>
 
-    <div class="container">
-        <div class="section">
-            <h2>Bienvenidos al Curso</h2>
-            <p>En este curso, exploraremos los fundamentos de la tecnología y la informática, desde el manejo de herramientas ofimáticas hasta conceptos avanzados de programación.s Prepárate para sumergirte en el mundo digital.</p>
-        </div>
+    <nav>
+        <button onclick="showGrade('grade11')">Grado 11</button>
+        <button onclick="showGrade('grade10')">Grado 10</button>
+        <button onclick="showGrade('grade9')">Grado 9</button>
+    </nav>
 
-        <div class="section">
-            <h2>Recursos del Curso</h2>
+    <div class="container">
+        <!-- Grado 11 -->
+        <div id="grade11" class="section">
+
+            <h2>Bienvenidos al Curso - Grado 11</h2>
+            <p>En este curso, exploraremos los fundamentos de la tecnología y la informática, desde el manejo de herramientas ofimáticas hasta conceptos avanzados de programación. Prepárate para sumergirte en el mundo digital.</p>
             <div class="resources">
                 <div class="resource-card">
                     <h3>Documentación</h3>
@@ -114,21 +178,108 @@
                     <a href="#">Ir al Foro</a>
                 </div>
             </div>
+            <div class="excel-section">
+                <h2>Documento de Excel</h2>
+                <p>Aquí puedes acceder y descargar el documento de Excel para las actividades del curso.</p>
+                <a href="ejerciciosdeconceptosbasicosdeexcel.xlsx" download>Clase 2 Descargar Excel</a>
+            </div>
+            <div class="upload-section">
+                <h2>Cargar Trabajo</h2>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <input type="file" name="trabajo" required>
+                    <input type="submit" value="Subir Trabajo">
+                </form>
+            </div>
         </div>
 
-        <div class="section excel-section">
-            <h2>Documento de Excel</h2>
-            <p>Aquí puedes acceder y descargar el documento de Excel para las actividades del curso.</p>
-            <a href="ejerciciosdeconceptosbasicosdeexcel.xlsx" download>Clase 2 Descargar Excel</a>
-            
-            <!-- Si prefieres incrustar el archivo de Excel, puedes usar un iframe -->
-            <!-- <iframe src="ruta/al/archivo.xlsx" width="100%" height="500px"></iframe> -->
+        <!-- Grado 10 -->
+        <div id="grade10" class="section hidden">
+            <h2>Bienvenidos al Curso - Grado 10</h2>
+            <p>En este curso, aprenderás los conceptos básicos de la tecnología y la informática, incluyendo el uso de herramientas ofimáticas y una introducción a la programación.</p>
+            <div class="resources">
+                <div class="resource-card">
+                    <h3>Documentación</h3>
+                    <p>Accede a los documentos y guías del curso.</p>
+                    <a href="#">Ver Documentos</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Videos Tutoriales</h3>
+                    <p>Aprende con nuestros videos explicativos.</p>
+                    <a href="#">Ver Videos</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Foro de Discusión</h3>
+                    <p>Participa en discusiones y resuelve tus dudas.</p>
+                    <a href="#">Ir al Foro</a>
+                </div>
+            </div>
+            <div class="excel-section">
+                <h2>Documento de Word</h2>
+                <p>Descarga el archivo de Word para las actividades del curso.</p>
+                <a href="ejerciciosdeconceptosbasicosdeexcel.xlsx" download>Descargar Word</a>
+            </div>
+            <div class="upload-section">
+                <h2>Cargar Trabajo</h2>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <input type="file" name="trabajo" required>
+                    <input type="submit" value="Subir Trabajo">
+                </form>
+            </div>
+        </div>
+
+        <!-- Grado 9 -->
+        <div id="grade9" class="section hidden">
+            <h2>Bienvenidos al Curso - Grado 9</h2>
+            <p>En este curso, te familiarizarás con las herramientas básicas de la informática y comenzarás a explorar el mundo de la programación.</p>
+            <div class="resources">
+                <div class="resource-card">
+                    <h3>Documentación</h3>
+                    <p>Accede a los documentos y guías del curso.</p>
+                    <a href="#">Ver Documentos</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Videos Tutoriales</h3>
+                    <p>Aprende con nuestros videos explicativos.</p>
+                    <a href="#">Ver Videos</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Foro de Discusión</h3>
+                    <p>Participa en discusiones y resuelve tus dudas.</p>
+                    <a href="#">Ir al Foro</a>
+                </div>
+            </div>
+            <div class="excel-section">
+                <h2>Documento de PowerPoint</h2>
+                <p>Descarga el archivo de PowerPoint para las actividades del curso.</p>
+                <a href="ruta/al/archivo.pptx" download>Descargar PowerPoint</a>
+            </div>
+            <div class="upload-section">
+                <h2>Cargar Trabajo</h2>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <input type="file" name="trabajo" required>
+                    <input type="submit" value="Subir Trabajo">
+                </form>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2023 Tecnología e Informática - Grado 11. Todos los derechos reservados.</p>
+        <p>&copy; 2023 Tecnología e Informática. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function showGrade(grade) {
+            // Oculta todas las secciones
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Muestra la sección seleccionada
+            document.getElementById(grade).classList.remove('hidden');
+        }
+
+        // Mostrar Grado 11 por defecto
+        showGrade('grade11');
+    </script>
 
 </body>
 </html>
